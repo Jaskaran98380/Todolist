@@ -1,0 +1,36 @@
+
+<%- include("header")-%>     <!--they are called layouts.Suppose if we want to add more html files or ejs files then instead of copying the header and footer part again and again,this process of templating will gonna help us avoid repetition.look at the about.ejs file for example.-->
+            <!-- <% if (kindOfDay === "Saturday" || kindOfDay === "Sunday"){ %>
+
+                <h1 style="color: purple"><%= kindOfDay %> Todo list!</h1>
+         
+             <% } else { %>
+         
+               <h1 style="color: blue"><%= kindOfDay %> Todo list!</h1>
+         
+         
+         
+             <% } %> -->
+              <div class="box" id="heading">
+                <h1> <%= kindOfDay %> </h1>
+              </div>
+             
+             <!-- <ul> -->
+              <div class="box">
+                <% for(var i=0;i<newItems.length;i++){ %>
+                  <div class="item">
+                    <input type="checkbox">
+                    <p> <%= newItems[i] %></p>
+                  </div>
+                <% } %>
+               
+                <!-- </ul> -->
+             <form class="item" action="/" method="post">
+                <input type="text" name="newItem2" placeholder="New Item">
+                <button type="submit" name="list" value="<%= kindOfDay %>">+</button>
+             </form>
+            </div>
+            <%- include("footer")-%>     <!--they are called layouts.Suppose if we want to add more html files or ejs files then instead of copying the header and footer part again and again,this process of templating will gonna help us avoid repetition.look at the about.ejs file for example.-->  
+
+<!--if we want to write the code here(logic)-->
+<!--angular_bracket(<)percentage(%) is used for control flow(if-else) (writing like this because if i am writing the other way like in the code it is giving an error dont know why)-->
